@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+        <form>
+            <div class="form-group">
+                <h3 class="text-info">Comments</h3>
+                <textarea class="form-control" placeholder="Enter Comments"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <div class="Comment-List">
+            <label class="bold">Comment Details</label><br>
+            <label>Username</label>
+            <p>All of the user's entered comments for the image</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

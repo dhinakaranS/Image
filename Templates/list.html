@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block  content%}
+
+
+<div class="container">
+    <div class="row">
+        {% for gal in galleries %}
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static gal.img_url  %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ gal.img_title }}</h5>
+                    <p class="card-text">{{ gal.img_desc }}</p>
+                    <a href="/gallery/comments/1" class="btn btn-primary">view</a>
+                </div>
+            </div>
+        </div>
+        {% endfor  %}
+    </div>
+</div>  
+{% endblock  %}
