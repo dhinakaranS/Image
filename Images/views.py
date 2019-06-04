@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from Images.models import Images
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 def image_gallery(request):
@@ -13,6 +15,22 @@ def image_gallery(request):
     
 def new(request):
     return render(request, 'new.html')
+
+
+def saveimage(request):
+    if (request.method == 'POST'):
+        uName = request.POST['username']
+        imageurl = request.POST['imageurl']
+        title = request.POST['title']
+        description = request.POST['description']
+        newImage = Images()
+        newImage.username = uName
+        newImage.imageurl = imageurl        
+        newImage.title = title
+        newImage.description = description
+        newImage.save()
+    return HttpResponseRedirect('/gallery')
+
 
 
 def comments(request, id):

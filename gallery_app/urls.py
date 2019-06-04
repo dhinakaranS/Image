@@ -26,6 +26,7 @@ urlpatterns = [
     path('gallery/',img.image_gallery),
     path('gallery/newimage/', img.new),
     path('gallery/comments/<int:id>/', img.comments),
-    path('register/user', reg.saveUser)
+    path('register/user', reg.saveUser),
+    path('gallery/newimage/image',img.saveimage)
     
 ]
