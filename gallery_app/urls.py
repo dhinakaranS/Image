@@ -20,6 +20,7 @@ from Register import views as reg
 from Images import views as img
 
 urlpatterns = [
+    path('',log.viewHome),
     path('login/',log.viewHome),
     path('admin/', admin.site.urls),
     path('register/',reg.registration),
@@ -27,6 +28,7 @@ urlpatterns = [
     path('gallery/newimage/', img.new),
     path('gallery/comments/<int:id>/', img.comments),
     path('register/user', reg.saveUser),
-    path('gallery/newimage/image',img.saveimage)
+    path('gallery/newimage/image',img.saveimage),
+    path('authenticate', log.authenticateUser)
     
 ]

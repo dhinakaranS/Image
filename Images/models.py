@@ -2,7 +2,7 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 from Register.models import User
-from Images.models import Images
+
 
 
 # Create your models here.
